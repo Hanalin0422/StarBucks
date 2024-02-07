@@ -7,3 +7,7 @@ ex
     <div class="name">          =>      <div class="container__name">
 
 <div class="btn primary">       =>   <div class="btn btn--primary">
+
+2024년 2월 7일  
+오늘은 magic scroll, navigation, youtubeAPI, transform, 3D transition을 함.  
+이제 푸터만 완성하면 끝
