@@ -20,3 +20,6 @@ html의 entities들이 잘 나와 있음.
 
 
 따로 정리는 안했지만 시간이 되면 정리할 예정!!!
+
+
+Netlify에 배포함 : https://main--dulcet-strudel-0522af.netlify.app/
