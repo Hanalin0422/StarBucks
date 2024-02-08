@@ -23,3 +23,5 @@ html의 entities들이 잘 나와 있음.
 
 
 Netlify에 배포함 : https://main--dulcet-strudel-0522af.netlify.app/
+
+리드미를 바꾸기
