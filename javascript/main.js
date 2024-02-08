@@ -1,20 +1,3 @@
-const searchEl = document.querySelector('.search');
-const searchInputEl = searchEl.querySelector('input');
-
-searchEl.addEventListener('click', function() {
-    searchInputEl.focus();
-});
-
-searchInputEl.addEventListener('focus', function(){
-    searchEl.classList.add('focused');
-    searchInputEl.setAttribute('placeholder', '통합검색');
-});
-
-searchInputEl.addEventListener('blur', function(){
-    searchEl.classList.remove('focused');
-    searchInputEl.setAttribute('placeholder', '');
-});
-
 const badgeEl = document.querySelector('header .badges');
 const toTopEl = document.querySelector('#to-top');
 
@@ -145,6 +128,3 @@ spyEls.forEach(function(spyEl){
         .setClassToggle(spyEl, 'show') //내가 지정한 지점을 넘어서 화면에 보여지면 scroll-spy 뒤에 show라는 클래스가 추가 되는 거임.
         .addTo(new ScrollMagic.Controller()); //그러면 이제 controller로 조절을 하면 되는 거지.
 });
-
-const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear();
