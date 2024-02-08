@@ -14,6 +14,7 @@ window.addEventListener('scroll', _.throttle(function(){
         gsap.to(toTopEl, .2, {
             x: 0 //버튼 원래 위치로 다시 이동
         })
+        console.log("Hello");
     }else{
         // 배찌 보이기
         gsap.to(badgeEl, .6, {
