@@ -23,3 +23,13 @@ html의 entities들이 잘 나와 있음.
 
 
 Netlify에 배포함 : [starbucks-site-hanalin.netlify.app](https://starbucks-site-hanalin.netlify.app/)
+
+terminal 창에 code . -r을 쓰면 현재 장소에 원하는 폴더를 vscode에 열겠다는 의미임.
+
+git reset --hard HEAD~1 : 버전의 내역에서 한 버전 되돌리겠다는 의미  
+git reset --hard ORIG_HEAD : 잘못 되돌렸다면 다시 한단계 원상 복구하는 명령어  
+현업에서는 reset을 되도록이면 안 쓰는 것이 좋음.  
+git checkout -t origin/purple 원격에 있는 purple 브랜치를 가져오면서 내 로컬에 브랜치를 생성하고 거기로 이동하는 명령어  
+git branch -d purple : 브랜치 삭제  
+git checkout -b purple : purple이라는 브랜치를 생성하면서 그 브랜치로 이동  
+
