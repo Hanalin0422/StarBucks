@@ -16,6 +16,7 @@ searchInputEl.addEventListener('blur', function(){
 });
 
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 
 // 화면을 스크롤 할때마다 나타나는 이벤트에 부하를 주어 일정 시간 간격으로 함수가 실행되게 해줌
 // _.throttle(함수, 시간)으로 사용
@@ -27,15 +28,27 @@ window.addEventListener('scroll', _.throttle(function(){
             opacity: 0,
             display: 'none'
         });
+        gsap.to(toTopEl, .2, {
+            x: 0 //버튼 원래 위치로 다시 이동
+        })
     }else{
         // 배찌 보이기
         gsap.to(badgeEl, .6, {
             opacity: 1,
             display: 'block'
         });
+        // 버튼 숨기기
+        gsap.to(toTopEl, .2, {
+            x: 100 //버튼 오른쪽으로 사라짐
+        })
     }
 }, 500));
 
+toTopEl.addEventListener('click', function(){
+    gsap.to(window, .7, {
+        scrollTo: 0 //화면의 지점을 0픽셀로 이동시켜 주겠다는 뜻. 0.7초동안 
+    })
+});
 
 const fadeEls = document.querySelectorAll('.visual .fade-in');
 
@@ -69,6 +82,18 @@ new Swiper('.promotion .swiper', {
         nextEl:'.promotion .swiper-next'
     }
 });
+
+new Swiper('.awards .swiper', {
+    autoplay: true,
+    loop: true,
+    spaceBetween: 30,
+    slidesPerView: 5,
+    navigation:{
+        prevEl:'.awards .swiper-prev',
+        nextEl:'.awards .swiper-next'
+    }
+});
+
 
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
@@ -120,3 +145,6 @@ spyEls.forEach(function(spyEl){
         .setClassToggle(spyEl, 'show') //내가 지정한 지점을 넘어서 화면에 보여지면 scroll-spy 뒤에 show라는 클래스가 추가 되는 거임.
         .addTo(new ScrollMagic.Controller()); //그러면 이제 controller로 조절을 하면 되는 거지.
 });
+
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear();
